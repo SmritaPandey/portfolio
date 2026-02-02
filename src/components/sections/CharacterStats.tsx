@@ -172,7 +172,7 @@ const CharacterStats = () => {
 
           {/* Skills Grid */}
           <div ref={statsRef} className="skills-grid">
-            {skills.map((skill, index) => (
+            {skills.map((skill, _index) => (
               <div
                 key={skill.name}
                 className="skill-card"

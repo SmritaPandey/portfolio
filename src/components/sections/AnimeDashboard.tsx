@@ -19,8 +19,6 @@ import {
   X,
   GlobeHemisphereWest,
   GitBranch,
-  Users,
-  ChartLineUp,
   Brain,
   Shield,
   CloudArrowUp,
@@ -31,7 +29,6 @@ import {
   Fire,
   Target,
   Medal,
-  Certificate,
   ArrowUpRight,
 } from '@phosphor-icons/react';
 
@@ -130,21 +127,6 @@ const skills: Skill[] = [
   { name: 'System Architecture', level: 90, category: 'backend', icon: <GitBranch weight="duotone" size={20} />, color: '#a855f7', achievement: 'Architect' },
   { name: 'DevOps & Cloud', level: 85, category: 'infra', icon: <CloudArrowUp weight="duotone" size={20} />, color: '#06b6d4', achievement: 'Certified' },
   { name: 'GRC & Security', level: 88, category: 'backend', icon: <Shield weight="duotone" size={20} />, color: '#ff6b9d', achievement: 'Specialist' },
-];
-
-const techStack = [
-  { name: 'React', hot: true },
-  { name: 'TypeScript', hot: true },
-  { name: 'Python', hot: true },
-  { name: 'TensorFlow', hot: false },
-  { name: 'AWS', hot: true },
-  { name: 'Docker', hot: false },
-  { name: 'PostgreSQL', hot: false },
-  { name: 'Redis', hot: false },
-  { name: 'GraphQL', hot: false },
-  { name: 'Next.js', hot: true },
-  { name: 'LangChain', hot: true },
-  { name: 'GPT-4', hot: true },
 ];
 
 const artworks = [

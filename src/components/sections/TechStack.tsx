@@ -9,7 +9,7 @@ const TechStack = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [_hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const categories = ['all', ...new Set(techIcons.map(t => t.category))];
 
