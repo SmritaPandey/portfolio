@@ -1,0 +1,131 @@
+fragment ProjectParts on Project {
+  __typename
+  items {
+    __typename
+    id
+    title
+    tagline
+    description
+    tech
+    impact
+    accentColor
+    year
+    type
+    url
+    github
+    screenshot
+    rarity
+    rpgDescription
+    stats {
+      __typename
+      label
+      value
+    }
+  }
+}
+
+fragment BlogParts on Blog {
+  __typename
+  items {
+    __typename
+    slug
+    title
+    excerpt
+    date
+    coverImage
+    tags
+    readTime
+    author
+    published
+  }
+}
+
+fragment ProfileParts on Profile {
+  __typename
+  name
+  title
+  tagline
+  email
+  location
+  avatar
+  social {
+    __typename
+    github
+    linkedin
+    twitter
+    instagram
+    website
+  }
+  navItems {
+    __typename
+    id
+    label
+    expandable
+    download
+    href
+  }
+  story {
+    __typename
+    title
+    chapters {
+      __typename
+      title
+      content
+    }
+    highlight
+    skills
+  }
+}
+
+fragment SkillsParts on Skills {
+  __typename
+  rpgSkills {
+    __typename
+    name
+    level
+    maxLevel
+    xp
+    maxXp
+    icon
+    category
+    description
+  }
+  softSkills {
+    __typename
+    name
+    icon
+    level
+    color
+  }
+}
+
+fragment ArtworksParts on Artworks {
+  __typename
+  items {
+    __typename
+    id
+    title
+    description
+    image
+    year
+    category
+    likes
+    views
+  }
+}
+
+fragment TechStackParts on TechStack {
+  __typename
+  techIcons {
+    __typename
+    name
+    icon
+    size
+    category
+  }
+  heroTechStack {
+    __typename
+    name
+    icon
+  }
+}

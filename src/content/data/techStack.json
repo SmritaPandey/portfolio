@@ -1,0 +1,202 @@
+{
+    "techIcons": [
+        {
+            "name": "Python",
+            "icon": "python",
+            "size": "lg",
+            "category": "Languages"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "js",
+            "size": "lg",
+            "category": "Languages"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "ts",
+            "size": "lg",
+            "category": "Languages"
+        },
+        {
+            "name": "HTML5",
+            "icon": "html",
+            "size": "md",
+            "category": "Languages"
+        },
+        {
+            "name": "CSS3",
+            "icon": "css",
+            "size": "md",
+            "category": "Languages"
+        },
+        {
+            "name": "React",
+            "icon": "react",
+            "size": "lg",
+            "category": "Frontend"
+        },
+        {
+            "name": "Next.js",
+            "icon": "nextjs",
+            "size": "lg",
+            "category": "Frontend"
+        },
+        {
+            "name": "Vite",
+            "icon": "vite",
+            "size": "md",
+            "category": "Frontend"
+        },
+        {
+            "name": "Node.js",
+            "icon": "nodejs",
+            "size": "lg",
+            "category": "Backend"
+        },
+        {
+            "name": "FastAPI",
+            "icon": "fastapi",
+            "size": "lg",
+            "category": "Backend"
+        },
+        {
+            "name": "Express",
+            "icon": "express",
+            "size": "md",
+            "category": "Backend"
+        },
+        {
+            "name": "PostgreSQL",
+            "icon": "postgres",
+            "size": "lg",
+            "category": "Database"
+        },
+        {
+            "name": "MongoDB",
+            "icon": "mongodb",
+            "size": "lg",
+            "category": "Database"
+        },
+        {
+            "name": "Redis",
+            "icon": "redis",
+            "size": "md",
+            "category": "Database"
+        },
+        {
+            "name": "Firebase",
+            "icon": "firebase",
+            "size": "md",
+            "category": "Database"
+        },
+        {
+            "name": "Docker",
+            "icon": "docker",
+            "size": "lg",
+            "category": "DevOps"
+        },
+        {
+            "name": "Git",
+            "icon": "git",
+            "size": "lg",
+            "category": "DevOps"
+        },
+        {
+            "name": "AWS",
+            "icon": "aws",
+            "size": "lg",
+            "category": "DevOps"
+        },
+        {
+            "name": "Azure",
+            "icon": "azure",
+            "size": "md",
+            "category": "DevOps"
+        },
+        {
+            "name": "Vercel",
+            "icon": "vercel",
+            "size": "md",
+            "category": "DevOps"
+        },
+        {
+            "name": "TensorFlow",
+            "icon": "tensorflow",
+            "size": "lg",
+            "category": "ML & Data"
+        },
+        {
+            "name": "PyTorch",
+            "icon": "pytorch",
+            "size": "lg",
+            "category": "ML & Data"
+        },
+        {
+            "name": "VS Code",
+            "icon": "vscode",
+            "size": "lg",
+            "category": "Tools"
+        },
+        {
+            "name": "Linux",
+            "icon": "linux",
+            "size": "md",
+            "category": "Tools"
+        },
+        {
+            "name": "Bash",
+            "icon": "bash",
+            "size": "md",
+            "category": "Tools"
+        },
+        {
+            "name": "Figma",
+            "icon": "figma",
+            "size": "md",
+            "category": "Tools"
+        }
+    ],
+    "heroTechStack": [
+        {
+            "name": "React",
+            "icon": "react"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "ts"
+        },
+        {
+            "name": "Node.js",
+            "icon": "nodejs"
+        },
+        {
+            "name": "Python",
+            "icon": "python"
+        },
+        {
+            "name": "Docker",
+            "icon": "docker"
+        },
+        {
+            "name": "Git",
+            "icon": "git"
+        },
+        {
+            "name": "TensorFlow",
+            "icon": "tensorflow"
+        },
+        {
+            "name": "Figma",
+            "icon": "figma"
+        },
+        {
+            "name": "AWS",
+            "icon": "aws"
+        },
+        {
+            "name": "Azure",
+            "icon": "azure"
+        }
+    ]
+}

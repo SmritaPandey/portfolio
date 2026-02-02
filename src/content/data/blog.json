@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "slug": "building-ai-systems-at-scale",
+      "title": "Building AI Systems at Scale",
+      "excerpt": "Lessons learned from deploying ML models that serve millions of requests...",
+      "date": "2026-01-15",
+      "coverImage": "/img/gallery-1.webp",
+      "tags": [
+        "AI",
+        "Engineering",
+        "Scale"
+      ],
+      "readTime": "8 min",
+      "author": "Smrita Pandey",
+      "published": true
+    },
+    {
+      "slug": "the-art-of-product-thinking",
+      "title": "The Art of Product Thinking",
+      "excerpt": "How I approach building products that users actually love... \nI love to jot down ideas then ...",
+      "date": "2026-01-10",
+      "coverImage": "/img/gallery-2.webp",
+      "tags": [
+        "Product",
+        "Design",
+        "Strategy"
+      ],
+      "readTime": "5 min",
+      "author": "Smrita Pandey",
+      "published": true
+    },
+    {
+      "slug": "from-code-to-ceo",
+      "title": "From Code to CEO",
+      "excerpt": "My journey transitioning from writing code to building companies...",
+      "date": "2026-01-05",
+      "coverImage": "/img/gallery-3.webp",
+      "tags": [
+        "Startup",
+        "Personal"
+      ],
+      "readTime": "6 min",
+      "author": "Smrita Pandey",
+      "published": true
+    }
+  ]
+}

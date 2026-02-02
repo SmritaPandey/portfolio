@@ -1,0 +1,103 @@
+{
+    "name": "Smrita Pandey",
+    "firstName": "SMRITA",
+    "lastName": "PANDEY",
+    "title": "Full-Stack Developer & AI Engineer",
+    "tagline": "Building technology that matters",
+    "email": "smritapandey@gmail.com",
+    "location": "India",
+    "bio": "Full-stack developer and AI engineer focused on building impactful technology solutions. From OCR systems processing 50K+ documents to GRC platforms used by enterprises.",
+    "avatar": "/img/avatar.jpg",
+    "resume": "/resume.pdf",
+    "socials": [
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/smritapandey",
+            "icon": "github",
+            "label": "GitHub Profile"
+        },
+        {
+            "platform": "LinkedIn",
+            "url": "https://linkedin.com/in/smritapandey",
+            "icon": "linkedin",
+            "label": "LinkedIn Profile"
+        },
+        {
+            "platform": "Twitter",
+            "url": "https://twitter.com/smritapandey",
+            "icon": "twitter",
+            "label": "Twitter/X Profile"
+        },
+        {
+            "platform": "Email",
+            "url": "mailto:smritapandey@gmail.com",
+            "icon": "mail",
+            "label": "Send Email"
+        }
+    ],
+    "navItems": [
+        {
+            "id": "home",
+            "label": "Home"
+        },
+        {
+            "id": "projects",
+            "label": "Projects",
+            "expandable": true
+        },
+        {
+            "id": "skills",
+            "label": "Skills"
+        },
+        {
+            "id": "experience",
+            "label": "Experience"
+        },
+        {
+            "id": "artworks",
+            "label": "Artworks"
+        },
+        {
+            "id": "blog",
+            "label": "Blog"
+        },
+        {
+            "id": "contact",
+            "label": "Contact"
+        },
+        {
+            "id": "resume",
+            "label": "Resume",
+            "download": true,
+            "href": "/resume.pdf"
+        }
+    ],
+    "story": {
+        "title": "My Journey",
+        "chapters": [
+            {
+                "title": "The Beginning",
+                "content": "My journey started with curiosity — debugging my first JavaScript at 14, then diving deep into cybersecurity and AI during high school."
+            },
+            {
+                "title": "Building Real Products",
+                "content": "From developing OCR systems for SRCC to building enterprise GRC platforms, each project pushed me to think beyond code."
+            },
+            {
+                "title": "The Future",
+                "content": "Now leading NeurQ AI Labs, focused on applied AI solutions that solve real problems for real people."
+            }
+        ],
+        "highlight": "Currently: Building NeurQ AI Labs — the future of AI-powered productivity.",
+        "skills": [
+            "Python",
+            "React",
+            "FastAPI",
+            "Next.js",
+            "PostgreSQL",
+            "Docker",
+            "TypeScript",
+            "Security"
+        ]
+    }
+}

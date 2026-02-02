@@ -1,0 +1,54 @@
+{
+    "items": [
+        {
+            "id": "skater",
+            "title": "Urban Flow",
+            "description": "Motion & freedom in urban landscapes. A study of movement and city life captured in minimalist form.",
+            "image": "/img/art-skater.jpg",
+            "year": "2024",
+            "category": "Digital Art",
+            "likes": 342,
+            "views": "2.4K"
+        },
+        {
+            "id": "self-portrait",
+            "title": "Mirror",
+            "description": "Self-reflection in minimalist form. Exploring identity through soft gradients and ethereal lighting.",
+            "image": "/img/art-selfportrait.jpg",
+            "year": "2024",
+            "category": "Portrait",
+            "likes": 528,
+            "views": "3.1K"
+        },
+        {
+            "id": "dreamscape",
+            "title": "Dreamscape",
+            "description": "Surreal landscapes from the subconscious. Blending reality with imagination in pastel hues.",
+            "image": "/img/art-skater.jpg",
+            "year": "2024",
+            "category": "Illustration",
+            "likes": 456,
+            "views": "2.8K"
+        },
+        {
+            "id": "neon-nights",
+            "title": "Neon Nights",
+            "description": "Cyberpunk aesthetics meet traditional art. Vibrant colors dance through digital dimensions.",
+            "image": "/img/art-selfportrait.jpg",
+            "year": "2023",
+            "category": "Digital Art",
+            "likes": 721,
+            "views": "4.2K"
+        },
+        {
+            "id": "serenity",
+            "title": "Serenity",
+            "description": "Finding peace in chaos. A meditative piece exploring calmness amidst urban complexity.",
+            "image": "/img/art-skater.jpg",
+            "year": "2023",
+            "category": "Abstract",
+            "likes": 289,
+            "views": "1.9K"
+        }
+    ]
+}

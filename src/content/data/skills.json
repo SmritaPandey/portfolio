@@ -1,0 +1,102 @@
+{
+    "rpgSkills": [
+        {
+            "name": "Full-Stack Development",
+            "level": 85,
+            "maxLevel": 100,
+            "xp": 8500,
+            "maxXp": 10000,
+            "icon": "⚔️",
+            "category": "combat",
+            "description": "React, Node.js, TypeScript, Next.js mastery"
+        },
+        {
+            "name": "AI & Machine Learning",
+            "level": 75,
+            "maxLevel": 100,
+            "xp": 7500,
+            "maxXp": 10000,
+            "icon": "🔮",
+            "category": "magic",
+            "description": "TensorFlow, PyTorch, Computer Vision, NLP"
+        },
+        {
+            "name": "Cybersecurity",
+            "level": 70,
+            "maxLevel": 100,
+            "xp": 7000,
+            "maxXp": 10000,
+            "icon": "🛡️",
+            "category": "special",
+            "description": "Penetration testing, security audits, compliance"
+        },
+        {
+            "name": "Cloud Architecture",
+            "level": 78,
+            "maxLevel": 100,
+            "xp": 7800,
+            "maxXp": 10000,
+            "icon": "☁️",
+            "category": "magic",
+            "description": "AWS, Azure, GCP, Docker, Kubernetes"
+        },
+        {
+            "name": "Product Building",
+            "level": 82,
+            "maxLevel": 100,
+            "xp": 8200,
+            "maxXp": 10000,
+            "icon": "🏗️",
+            "category": "combat",
+            "description": "End-to-end product development, UX design"
+        },
+        {
+            "name": "Leadership",
+            "level": 80,
+            "maxLevel": 100,
+            "xp": 8000,
+            "maxXp": 10000,
+            "icon": "👑",
+            "category": "special",
+            "description": "Team building, product strategy, vision"
+        }
+    ],
+    "softSkills": [
+        {
+            "name": "Problem Solving",
+            "icon": "💡",
+            "level": 92,
+            "color": "#22d3ee"
+        },
+        {
+            "name": "Leadership",
+            "icon": "🎯",
+            "level": 78,
+            "color": "#a855f7"
+        },
+        {
+            "name": "Communication",
+            "icon": "💬",
+            "level": 85,
+            "color": "#ff6b9d"
+        },
+        {
+            "name": "Collaboration",
+            "icon": "🤝",
+            "level": 88,
+            "color": "#22c55e"
+        },
+        {
+            "name": "Adaptability",
+            "icon": "⚡",
+            "level": 94,
+            "color": "#fbbf24"
+        },
+        {
+            "name": "Quick Learning",
+            "icon": "📚",
+            "level": 90,
+            "color": "#d946ef"
+        }
+    ]
+}
