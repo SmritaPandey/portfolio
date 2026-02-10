@@ -194,6 +194,7 @@ type BlogItems {
   readTime: String
   author: String
   published: Boolean
+  content: String
 }
 
 type Blog implements Node & Document {
@@ -218,6 +219,7 @@ input BlogItemsFilter {
   readTime: StringFilter
   author: StringFilter
   published: BooleanFilter
+  content: StringFilter
 }
 
 input BlogFilter {
@@ -235,12 +237,11 @@ type BlogConnection implements Connection {
   edges: [BlogConnectionEdges]
 }
 
-type ProfileSocial {
-  github: String
-  linkedin: String
-  twitter: String
-  instagram: String
-  website: String
+type ProfileSocials {
+  platform: String!
+  url: String!
+  icon: String
+  label: String
 }
 
 type ProfileNavItems {
@@ -265,12 +266,16 @@ type ProfileStory {
 
 type Profile implements Node & Document {
   name: String!
+  firstName: String
+  lastName: String
   title: String
   tagline: String
+  bio: String
   email: String
   location: String
   avatar: String
-  social: ProfileSocial
+  resume: String
+  socials: [ProfileSocials]
   navItems: [ProfileNavItems]
   story: ProfileStory
   id: ID!
@@ -278,12 +283,11 @@ type Profile implements Node & Document {
   _values: JSON!
 }
 
-input ProfileSocialFilter {
-  github: StringFilter
-  linkedin: StringFilter
-  twitter: StringFilter
-  instagram: StringFilter
-  website: StringFilter
+input ProfileSocialsFilter {
+  platform: StringFilter
+  url: StringFilter
+  icon: StringFilter
+  label: StringFilter
 }
 
 input ProfileNavItemsFilter {
@@ -308,12 +312,16 @@ input ProfileStoryFilter {
 
 input ProfileFilter {
   name: StringFilter
+  firstName: StringFilter
+  lastName: StringFilter
   title: StringFilter
   tagline: StringFilter
+  bio: StringFilter
   email: StringFilter
   location: StringFilter
   avatar: ImageFilter
-  social: ProfileSocialFilter
+  resume: StringFilter
+  socials: ProfileSocialsFilter
   navItems: ProfileNavItemsFilter
   story: ProfileStoryFilter
 }
@@ -567,18 +575,18 @@ input BlogItemsMutation {
   readTime: String
   author: String
   published: Boolean
+  content: String
 }
 
 input BlogMutation {
   items: [BlogItemsMutation]
 }
 
-input ProfileSocialMutation {
-  github: String
-  linkedin: String
-  twitter: String
-  instagram: String
-  website: String
+input ProfileSocialsMutation {
+  platform: String
+  url: String
+  icon: String
+  label: String
 }
 
 input ProfileNavItemsMutation {
@@ -603,12 +611,16 @@ input ProfileStoryMutation {
 
 input ProfileMutation {
   name: String
+  firstName: String
+  lastName: String
   title: String
   tagline: String
+  bio: String
   email: String
   location: String
   avatar: String
-  social: ProfileSocialMutation
+  resume: String
+  socials: [ProfileSocialsMutation]
   navItems: [ProfileNavItemsMutation]
   story: ProfileStoryMutation
 }

@@ -8,211 +8,33 @@ import {
   GithubLogo,
   FunnelSimple,
   MagnifyingGlass,
+  Crown,
+  Lightning,
+  Star,
+  Diamond,
 } from '@phosphor-icons/react';
 import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
+import { projects } from '../content';
+import type { Project, ProjectRarity } from '../content';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Project {
-  id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  tech: string[];
-  impact: string[];
-  accentColor: string;
-  year: string;
-  type: string;
-  url: string;
-  github?: string;
-  screenshot?: string;
-  stats?: { label: string; value: string }[];
-}
+const rarityColors: Record<ProjectRarity, string> = {
+  Mythic: '#ff4500',
+  Legendary: '#fbbf24',
+  Epic: '#a855f7',
+  Rare: '#22d3ee',
+  Common: '#71717a',
+};
 
-// All projects data (extended from landing page)
-const projects: Project[] = [
-  {
-    id: 'srcc-ocr',
-    title: 'SRCC OCR Digitization',
-    tagline: 'Hybrid OCR pipeline for 50K+ student records',
-    description:
-      'Developed a hybrid OCR pipeline (Tesseract, TrOCR, CRAFT, Google Vision, Azure Document AI) to extract structured fields from handwritten admission forms. Reduced manual entry time from 18 months to 3 months with 95% accuracy.',
-    tech: ['FastAPI', 'Python', 'TrOCR', 'CRAFT', 'Azure AI', 'PostgreSQL'],
-    impact: ['50K+', 'Forms Digitized'],
-    stats: [
-      { label: 'Accuracy', value: '95%' },
-      { label: 'Time Saved', value: '15mo' },
-      { label: 'Forms', value: '50K+' },
-    ],
-    accentColor: '#22d3ee',
-    year: '2024',
-    type: 'GovTech',
-    url: '#',
-  },
-  {
-    id: 'qsgrc',
-    title: 'QS-GRC Platform',
-    tagline: 'Integrated Governance, Risk & Compliance suite',
-    description:
-      'Designed a modular GRC product combining ITAM, DLP, patch management, risk scoring, SIEM-like alerts, and DPDP-aligned compliance features. Achieved 90% reduction in manual compliance effort during pilot runs.',
-    tech: ['FastAPI', 'React', 'PostgreSQL', 'Docker', 'RBAC'],
-    impact: ['90%', 'Effort Reduction'],
-    stats: [
-      { label: 'Modules', value: '8+' },
-      { label: 'Pilot Sites', value: '5' },
-      { label: 'Compliance', value: '90%' },
-    ],
-    accentColor: '#d946ef',
-    year: '2024',
-    type: 'Enterprise Platform',
-    url: 'https://qsgrc.com/presentation',
-  },
-  {
-    id: 'enkay-enviro',
-    title: 'Enkay Enviro CMS',
-    tagline: 'Enterprise content management & client portal',
-    description:
-      'Solo-developed a customizable CMS and client portal for a 30+ year environmental consultancy with 1000+ projects. Role-based access, media library, and project documentation workflows with 70% reduced content-update latency.',
-    tech: ['React', 'Node.js', 'MongoDB', 'RBAC', 'AWS'],
-    impact: ['1000+', 'Projects Managed'],
-    stats: [
-      { label: 'Projects', value: '1000+' },
-      { label: 'Latency', value: '-70%' },
-      { label: 'Years Active', value: '30+' },
-    ],
-    accentColor: '#a855f7',
-    year: '2023',
-    type: 'Enterprise',
-    url: 'https://enkayenviro.com',
-  },
-  {
-    id: 'apna-agri-store',
-    title: 'Apna Agri Store',
-    tagline: 'Farmer marketplace connecting 500+ farmers',
-    description:
-      'Built a MERN-based marketplace with inventory and transaction systems, onboarding 500+ farmers. Features UPI/Stripe payments, SMS notifications, and price-forecasting models for farmer decision-making.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'UPI', 'SMS API'],
-    impact: ['500+', 'Farmers Onboarded'],
-    stats: [
-      { label: 'Farmers', value: '500+' },
-      { label: 'Transactions', value: '10K+' },
-      { label: 'Daily Active', value: '200+' },
-    ],
-    accentColor: '#fbbf24',
-    year: '2024',
-    type: 'Marketplace',
-    url: 'https://apnaagristore.com',
-  },
-  {
-    id: 'neurq-ai',
-    title: 'NeurQ AI Labs',
-    tagline: 'Applied AI research & product studio',
-    description:
-      'Research lab and product studio focused on applied AI solutions. From natural language processing to computer vision, developing technology that solves real problems across industries.',
-    tech: ['Python', 'TensorFlow', 'PyTorch', 'LangChain', 'GCP'],
-    impact: ['AI', 'Research Lab'],
-    stats: [
-      { label: 'Models', value: '15+' },
-      { label: 'Papers', value: '3' },
-      { label: 'Products', value: '5' },
-    ],
-    accentColor: '#ff6b9d',
-    year: '2024',
-    type: 'AI Lab',
-    url: 'https://neurqai.com',
-  },
-  {
-    id: 'nbatech',
-    title: 'The NBATech Platform',
-    tagline: 'GovTech & enterprise solutions suite',
-    description:
-      'Full-service technology platform delivering ORMS (revenue monitoring for UP state), Arth Pay (merchant QR-payments with 15,000+ installs), and S3 Farmer App. Serving enterprises and government at scale.',
-    tech: ['React Native', 'Node.js', 'AWS', 'Payment Gateways', 'Mobile'],
-    impact: ['15K+', 'App Installs'],
-    stats: [
-      { label: 'Installs', value: '15K+' },
-      { label: 'Merchants', value: '7.4K' },
-      { label: 'States', value: '3' },
-    ],
-    accentColor: '#22d3ee',
-    year: '2022-Present',
-    type: 'GovTech Suite',
-    url: 'https://thenbatech.com',
-  },
-  {
-    id: 'intel-data',
-    title: 'Intel Data Center Optimization',
-    tagline: 'Energy telemetry analysis for 15% cost reduction',
-    description:
-      'Analyzed 1TB+ of energy telemetry using Python, SQL and Tableau; identified optimization opportunities with a projected 15% cost reduction for targeted sites.',
-    tech: ['Python', 'SQL', 'Tableau', 'Data Analysis', 'Visualization'],
-    impact: ['15%', 'Cost Reduction'],
-    stats: [
-      { label: 'Data Analyzed', value: '1TB+' },
-      { label: 'Savings', value: '15%' },
-      { label: 'Sites', value: '3' },
-    ],
-    accentColor: '#0068b5',
-    year: '2024',
-    type: 'Data Analytics',
-    url: '#',
-  },
-  {
-    id: 'mosip',
-    title: 'MOSIP Inji App',
-    tagline: 'Open-source digital identity platform',
-    description:
-      'Contributed to an open-source digital identity stack supported by the Gates Foundation and used by 30+ countries; focused on authentication flows and secure wallet features using Java and React.',
-    tech: ['Java', 'React', 'Digital ID', 'Security', 'Open Source'],
-    impact: ['30+', 'Countries'],
-    stats: [
-      { label: 'Countries', value: '30+' },
-      { label: 'Users', value: 'Millions' },
-      { label: 'Features', value: '12' },
-    ],
-    accentColor: '#10b981',
-    year: '2025',
-    type: 'Open Source',
-    url: 'https://mosip.io',
-    github: 'https://github.com/mosip',
-  },
-  {
-    id: 'naralytics',
-    title: 'Naralytics',
-    tagline: 'Emotional Intelligence content platform',
-    description:
-      'Led a redesign and feature expansion of a human-centered AI content platform; improved engagement metrics (retention + session length) through data-informed UX and real-time media pipelines using Firebase.',
-    tech: ['React Native', 'Firebase', 'AI', 'Real-time', 'Analytics'],
-    impact: ['10K+', 'Monthly Users'],
-    stats: [
-      { label: 'Retention', value: '+45%' },
-      { label: 'Session', value: '+2min' },
-      { label: 'MAU', value: '10K+' },
-    ],
-    accentColor: '#f97316',
-    year: '2024',
-    type: 'Mobile App',
-    url: '#',
-  },
-  {
-    id: 'babble',
-    title: 'Babble - 3D Language Learning',
-    tagline: 'Gamified VR/3D language practice environment',
-    description:
-      'Built a gamified environment for language practice with adaptive tasks; achieved strong user feedback from beta testing using Unity and immersive design principles.',
-    tech: ['Unity', 'C#', '3D Design', 'Gamification', 'AR/VR'],
-    impact: ['VR', 'Education'],
-    stats: [
-      { label: 'Languages', value: '5' },
-      { label: 'Beta Users', value: '200+' },
-      { label: 'Rating', value: '4.8' },
-    ],
-    accentColor: '#8b5cf6',
-    year: '2024',
-    type: 'EdTech',
-    url: '#',
-  },
-];
+const rarityIcons: Record<ProjectRarity, React.ReactNode> = {
+  Mythic: <Crown weight="fill" size={14} />,
+  Legendary: <Lightning weight="fill" size={14} />,
+  Epic: <Diamond weight="fill" size={14} />,
+  Rare: <Star weight="fill" size={14} />,
+  Common: <Star weight="regular" size={14} />,
+};
 
 const projectTypes = ['All', ...new Set(projects.map(p => p.type))];
 
@@ -338,6 +160,14 @@ const ProjectsPage = () => {
               <div className="grid-card-overlay" />
             </div>
 
+            {/* Rarity Badge */}
+            {project.rarity && (
+              <div className="grid-card-rarity" style={{ '--rarity-color': rarityColors[project.rarity] } as React.CSSProperties}>
+                {rarityIcons[project.rarity]}
+                <span>{project.rarity}</span>
+              </div>
+            )}
+
             {/* Content */}
             <div className="grid-card-content">
               <div className="grid-card-meta">
@@ -405,6 +235,12 @@ const ProjectsPage = () => {
             <div className="popup-details">
               <div className="popup-meta">
                 <span className="popup-type">{selectedProject.type}</span>
+                {selectedProject.rarity && (
+                  <span className="popup-rarity" style={{ '--rarity-color': rarityColors[selectedProject.rarity] } as React.CSSProperties}>
+                    {rarityIcons[selectedProject.rarity]}
+                    {selectedProject.rarity}
+                  </span>
+                )}
                 <span className="popup-year">{selectedProject.year}</span>
               </div>
 
@@ -422,6 +258,14 @@ const ProjectsPage = () => {
               </div>
 
               <p className="popup-description">{selectedProject.description}</p>
+
+              {/* RPG Description */}
+              {selectedProject.rpgDescription && (
+                <div className="popup-rpg">
+                  <span className="popup-rpg-label">⚔️ Lore</span>
+                  <p className="popup-rpg-text">{selectedProject.rpgDescription}</p>
+                </div>
+              )}
 
               {/* Full Tech Stack */}
               <div className="popup-tech">
@@ -1085,7 +929,71 @@ const ProjectsPage = () => {
             font-size: 1.2rem;
           }
         }
+        /* ===== RARITY BADGE ===== */
+        .grid-card-rarity {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          z-index: 5;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 4px 10px;
+          font-size: 0.65rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          color: var(--rarity-color);
+          background: rgba(0, 0, 0, 0.7);
+          border: 1px solid color-mix(in srgb, var(--rarity-color) 50%, transparent);
+          border-radius: 20px;
+          backdrop-filter: blur(8px);
+        }
+
+        .popup-rarity {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--rarity-color);
+          padding: 6px 14px;
+          background: color-mix(in srgb, var(--rarity-color) 15%, transparent);
+          border: 1px solid color-mix(in srgb, var(--rarity-color) 40%, transparent);
+          border-radius: 20px;
+        }
+
+        .popup-rpg {
+          margin-bottom: 20px;
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          border-radius: 12px;
+          border-left: 3px solid var(--accent);
+        }
+
+        .popup-rpg-label {
+          display: block;
+          font-size: 0.7rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-muted);
+          margin-bottom: 8px;
+        }
+
+        .popup-rpg-text {
+          font-size: 0.9rem;
+          font-style: italic;
+          line-height: 1.6;
+          color: var(--text-dim);
+          margin: 0;
+        }
       `}</style>
+
+      <Footer />
     </div>
   );
 };

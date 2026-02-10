@@ -1,137 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ArrowLeft, Star, Heart, Sparkle } from '@phosphor-icons/react';
+import { ArrowLeft, Star, Heart, Sparkle, ArrowRight } from '@phosphor-icons/react';
 import Header from '../components/layout/Header';
-
-// Sample post content - will be replaced by CMS/markdown
-const postsContent: Record<string, { title: string; date: string; readTime: string; content: string; tags: string[] }> = {
-    'building-ai-systems-at-scale': {
-        title: 'Building AI Systems at Scale',
-        date: '2026-01-28',
-        readTime: '5 min',
-        tags: ['AI', 'Engineering'],
-        content: `
-# Building AI Systems at Scale
-
-## Introduction
-
-When deploying machine learning models in production environments, the challenges extend far beyond model accuracy. In this post, I'll share lessons learned from building and scaling AI systems that serve millions of users.
-
-## Key Considerations
-
-### 1. Infrastructure
-
-The foundation of any scalable AI system is robust infrastructure. This includes:
-
-- **Model serving**: Using optimized inference servers
-- **Auto-scaling**: Dynamic resource allocation based on demand
-- **Monitoring**: Real-time performance metrics and alerting
-
-### 2. Data Pipeline
-
-A reliable data pipeline is crucial:
-
-\`\`\`python
-def process_data(raw_data):
-    # Clean and validate
-    cleaned = validate_schema(raw_data)
-    
-    # Feature engineering
-    features = extract_features(cleaned)
-    
-    return features
-\`\`\`
-
-### 3. Model Versioning
-
-Always version your models and maintain rollback capabilities.
-
-## Conclusion
-
-Building AI at scale is as much about engineering as it is about data science. The best models are useless without proper infrastructure.
-
----
-
-*Thanks for reading! Feel free to reach out if you have questions.*
-        `,
-    },
-    'the-art-of-system-design': {
-        title: 'The Art of System Design',
-        date: '2026-01-15',
-        readTime: '8 min',
-        tags: ['Architecture', 'Tech'],
-        content: `
-# The Art of System Design
-
-## Thinking About Scale
-
-System design is both an art and a science. When building systems that serve millions of users, every decision matters.
-
-## Core Principles
-
-### Start Simple
-
-Don't over-engineer from day one. Start with a simple architecture and evolve as needed.
-
-### Plan for Failure
-
-Everything fails eventually. Design your systems to be resilient.
-
-### Measure Everything
-
-What you can't measure, you can't improve.
-
-## Common Patterns
-
-- **Microservices**: Breaking down monoliths
-- **Event-driven**: Decoupling through events
-- **CQRS**: Separating reads from writes
-
-*More on this topic coming soon...*
-        `,
-    },
-    'from-developer-to-founder': {
-        title: 'From Developer to Founder',
-        date: '2026-01-05',
-        readTime: '6 min',
-        tags: ['Startup', 'Personal'],
-        content: `
-# From Developer to Founder
-
-## The Journey
-
-My path from writing code to building companies wasn't planned. It evolved naturally from solving problems I cared about.
-
-## What Changed
-
-As a developer, I focused on building great products. As a founder, I had to think about:
-
-- Vision and strategy
-- Team building
-- Business development
-- Customer relationships
-
-## Lessons Learned
-
-1. **Code is just one part** - The best product doesn't always win
-2. **People matter most** - Your team makes or breaks you
-3. **Stay technical** - Don't lose touch with the craft
-
-## What's Next
-
-I'm still learning every day. The journey continues...
-
-*Share your own stories with me!*
-        `,
-    },
-};
+import Footer from '../components/layout/Footer';
+import { getBlogPostBySlug } from '../content';
 
 const BlogPostPage = () => {
     const { slug } = useParams<{ slug: string }>();
     const contentRef = useRef<HTMLDivElement>(null);
 
-    const post = slug ? postsContent[slug] : null;
+    const post = slug ? getBlogPostBySlug(slug) : null;
 
     useEffect(() => {
         if (contentRef.current) {
@@ -189,7 +68,7 @@ const BlogPostPage = () => {
                 </div>
 
                 <div className="blog-post__content" dangerouslySetInnerHTML={{
-                    __html: post.content
+                    __html: (post.content || '')
                         .replace(/^# (.*$)/gm, '<h1>$1</h1>')
                         .replace(/^## (.*$)/gm, '<h2>$1</h2>')
                         .replace(/^### (.*$)/gm, '<h3>$1</h3>')
@@ -212,7 +91,21 @@ const BlogPostPage = () => {
                         .replace(/<p><hr><\/p>/g, '<hr>')
                         .replace(/<p><\/p>/g, '')
                 }} />
+
+                {/* Bottom Navigation */}
+                <div className="blog-post__nav">
+                    <Link to="/blog" className="blog-post__nav-link">
+                        <ArrowLeft weight="bold" size={16} />
+                        <span>Back to all posts</span>
+                    </Link>
+                    <Link to="/" className="blog-post__nav-link">
+                        <span>Home</span>
+                        <ArrowRight weight="bold" size={16} />
+                    </Link>
+                </div>
             </article>
+
+            <Footer />
 
             <style>{`
                 .blog-post-page {
@@ -235,10 +128,24 @@ const BlogPostPage = () => {
                     color: #FFB7D5;
                 }
 
+                /* Floating animations */
+                .floating {
+                    animation: kawaiiFloat 6s ease-in-out infinite;
+                }
+                .floating-delay-1 { animation-delay: -1.5s; }
+                .floating-delay-2 { animation-delay: -3s; }
+
+                @keyframes kawaiiFloat {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    25% { transform: translateY(-12px) rotate(5deg); }
+                    50% { transform: translateY(-6px) rotate(-3deg); }
+                    75% { transform: translateY(-18px) rotate(3deg); }
+                }
+
                 .blog-post {
                     max-width: 720px;
                     margin: 0 auto;
-                    padding: 3rem 2rem 5rem;
+                    padding: 3rem 2rem 4rem;
                     position: relative;
                     z-index: 1;
                 }
@@ -253,11 +160,15 @@ const BlogPostPage = () => {
                 .blog-post__back {
                     font-size: 0.875rem;
                     color: #FF8FAB;
-                    transition: color 0.3s ease;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
                 }
 
                 .blog-post__back:hover {
                     color: #FF6B9D;
+                    transform: translateX(-4px);
                 }
 
                 .blog-post__info {
@@ -273,6 +184,9 @@ const BlogPostPage = () => {
                     color: #5A4A5C;
                     line-height: 1.2;
                     margin-bottom: 1rem;
+                    background: linear-gradient(135deg, #5A4A5C 0%, #FF6B9D 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
 
                 .blog-post__tags {
@@ -287,30 +201,52 @@ const BlogPostPage = () => {
                     background: linear-gradient(135deg, #FFB7D5, #E8D5F2);
                     border-radius: 12px;
                     color: #5A4A5C;
+                    font-weight: 500;
                 }
 
                 .blog-post__content {
-                    font-size: 1.125rem;
-                    line-height: 1.8;
+                    font-size: 1.1rem;
+                    line-height: 1.85;
                     color: #5A4A5C;
+                    background: rgba(255, 255, 255, 0.7);
+                    backdrop-filter: blur(8px);
+                    border-radius: 24px;
+                    padding: 2.5rem;
+                    border: 1px solid rgba(255, 183, 213, 0.15);
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
                 }
 
                 .blog-post__content h1 {
                     font-size: 2rem;
                     margin: 2rem 0 1rem;
                     color: #5A4A5C;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 2px solid rgba(255, 183, 213, 0.3);
                 }
 
                 .blog-post__content h2 {
                     font-size: 1.5rem;
                     margin: 2rem 0 1rem;
                     color: #5A4A5C;
+                    position: relative;
+                    padding-left: 16px;
+                }
+
+                .blog-post__content h2::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 4px;
+                    bottom: 4px;
+                    width: 4px;
+                    background: linear-gradient(135deg, #FFB7D5, #E8D5F2);
+                    border-radius: 2px;
                 }
 
                 .blog-post__content h3 {
                     font-size: 1.25rem;
                     margin: 1.5rem 0 0.75rem;
-                    color: #5A4A5C;
+                    color: #FF6B9D;
                 }
 
                 .blog-post__content p {
@@ -324,35 +260,44 @@ const BlogPostPage = () => {
 
                 .blog-post__content li {
                     margin-bottom: 0.5rem;
+                    position: relative;
+                }
+
+                .blog-post__content li::marker {
+                    color: #FFB7D5;
                 }
 
                 .blog-post__content code {
                     font-family: var(--font-mono);
                     font-size: 0.9em;
-                    background: rgba(255, 183, 213, 0.2);
-                    padding: 0.2rem 0.4rem;
-                    border-radius: 4px;
+                    background: rgba(255, 183, 213, 0.15);
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 6px;
+                    border: 1px solid rgba(255, 183, 213, 0.2);
                 }
 
                 .blog-post__content pre {
                     background: #2a2a3a;
                     padding: 1.5rem;
-                    border-radius: 12px;
+                    border-radius: 16px;
                     overflow-x: auto;
                     margin: 1.5rem 0;
+                    border: 1px solid rgba(255, 183, 213, 0.15);
+                    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
                 }
 
                 .blog-post__content pre code {
                     background: none;
                     padding: 0;
                     color: #e0e0e0;
+                    border: none;
                 }
 
                 .blog-post__content hr {
                     border: none;
-                    height: 1px;
-                    background: linear-gradient(90deg, transparent, #FFB7D5, transparent);
-                    margin: 2rem 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, transparent, #FFB7D5, #E8D5F2, transparent);
+                    margin: 2.5rem 0;
                 }
 
                 .blog-post__content strong {
@@ -363,6 +308,39 @@ const BlogPostPage = () => {
                 .blog-post__content em {
                     font-style: italic;
                     color: #8B7A8D;
+                }
+
+                /* Bottom Navigation */
+                .blog-post__nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid rgba(255, 183, 213, 0.2);
+                }
+
+                .blog-post__nav-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 0.9rem;
+                    color: #FF8FAB;
+                    padding: 10px 20px;
+                    background: rgba(255, 255, 255, 0.8);
+                    backdrop-filter: blur(8px);
+                    border-radius: 16px;
+                    border: 1px solid rgba(255, 183, 213, 0.2);
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+                }
+
+                .blog-post__nav-link:hover {
+                    background: linear-gradient(135deg, #FFB7D5, #E8D5F2);
+                    color: #5A4A5C;
+                    border-color: transparent;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(255, 143, 171, 0.2);
                 }
 
                 .blog-post__not-found {
@@ -377,13 +355,27 @@ const BlogPostPage = () => {
 
                 @media (max-width: 768px) {
                     .blog-post {
-                        padding: 2rem 1rem 4rem;
+                        padding: 2rem 1rem 3rem;
+                    }
+
+                    .blog-post__content {
+                        padding: 1.5rem;
                     }
 
                     .blog-post__meta {
                         flex-direction: column;
                         align-items: flex-start;
                         gap: 1rem;
+                    }
+
+                    .blog-post__nav {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+
+                    .blog-post__nav-link {
+                        width: 100%;
+                        justify-content: center;
                     }
                 }
             `}</style>

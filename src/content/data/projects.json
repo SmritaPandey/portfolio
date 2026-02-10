@@ -21,6 +21,7 @@
       "year": "2024",
       "type": "GovTech",
       "url": "#",
+      "screenshot": "/img/projects/srcc-ocr.png",
       "rarity": "Legendary",
       "rpgDescription": "\"An arcane scroll of automation, forged in the fires of AI and OCR magic. Capable of transmuting 50,000 handwritten forms into pure digital gold.\"",
       "stats": [
@@ -58,6 +59,7 @@
       "year": "2024",
       "type": "Enterprise Platform",
       "url": "https://qsgrc.com/presentation",
+      "screenshot": "/img/projects/qsgrc.png",
       "rarity": "Epic",
       "rpgDescription": "\"A mighty shield of compliance, enchanted with RBAC wards and risk-detecting runes. Reduces the burden of governance by 90%.\"",
       "stats": [
@@ -95,6 +97,7 @@
       "year": "2023",
       "type": "Enterprise",
       "url": "https://enkayenviro.com",
+      "screenshot": "/img/projects/enkay-enviro.png",
       "rarity": "Rare",
       "rpgDescription": "\"A grimoire of content mastery, blessed with 30 years of environmental wisdom. Grants the power to manage 1000+ sacred scrolls.\"",
       "stats": [
@@ -133,6 +136,7 @@
       "year": "2024",
       "type": "Marketplace",
       "url": "https://apnaagristore.com",
+      "screenshot": "/img/projects/apna-agri.png",
       "rarity": "Rare",
       "rpgDescription": "\"A harvest blessing that connects 500 farmers to the realm. Features payment enchantments and price-foresight spells.\"",
       "stats": [
@@ -170,6 +174,7 @@
       "year": "2024",
       "type": "AI Lab",
       "url": "https://neurqai.com",
+      "screenshot": "/img/projects/neurq-ai.png",
       "rarity": "Mythic",
       "rpgDescription": "\"The sanctum of artificial intelligence, where neural networks are born. 15+ models trained, 3 papers written, 5 products deployed.\"",
       "stats": [
@@ -189,7 +194,7 @@
     },
     {
       "id": "nbatech",
-      "title": "The NBATech",
+      "title": "The NBATech Platform",
       "tagline": "GovTech & enterprise solutions suite",
       "description": "Full-service technology platform delivering ORMS (revenue monitoring for UP state), Arth Pay (merchant QR-payments with 15,000+ installs), and S3 Farmer App. Serving enterprises and government at scale.",
       "tech": [
@@ -207,6 +212,7 @@
       "year": "2022-Present",
       "type": "GovTech Suite",
       "url": "https://thenbatech.com",
+      "screenshot": "/img/projects/nbatech.png",
       "rarity": "Legendary",
       "rpgDescription": "\"The ultimate tech arsenal — ORMS for state revenue, Arth Pay for 15K+ merchants, S3 for farmers. Government-grade power.\"",
       "stats": [
@@ -221,6 +227,156 @@
         {
           "label": "States",
           "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "intel-data",
+      "title": "Intel Data Center Optimization",
+      "tagline": "Energy telemetry analysis for 15% cost reduction",
+      "description": "Analyzed 1TB+ of energy telemetry using Python, SQL and Tableau; identified optimization opportunities with a projected 15% cost reduction for targeted sites.",
+      "tech": [
+        "Python",
+        "SQL",
+        "Tableau",
+        "Data Analysis",
+        "Visualization"
+      ],
+      "impact": [
+        "15%",
+        "Cost Reduction"
+      ],
+      "accentColor": "#0068b5",
+      "year": "2024",
+      "type": "Data Analytics",
+      "url": "#",
+      "screenshot": "/img/projects/intel-data.png",
+      "rarity": "Rare",
+      "rpgDescription": "\"A crystal ball of energy insight, analyzing 1TB+ of telemetry data to reveal the hidden path to 15% cost reduction.\"",
+      "stats": [
+        {
+          "label": "Data Analyzed",
+          "value": "1TB+"
+        },
+        {
+          "label": "Savings",
+          "value": "15%"
+        },
+        {
+          "label": "Sites",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "id": "mosip",
+      "title": "MOSIP Inji App",
+      "tagline": "Open-source digital identity platform",
+      "description": "Contributed to an open-source digital identity stack supported by the Gates Foundation and used by 30+ countries; focused on authentication flows and secure wallet features using Java and React.",
+      "tech": [
+        "Java",
+        "React",
+        "Digital ID",
+        "Security",
+        "Open Source"
+      ],
+      "impact": [
+        "30+",
+        "Countries"
+      ],
+      "accentColor": "#10b981",
+      "year": "2025",
+      "type": "Open Source",
+      "url": "https://mosip.io",
+      "github": "https://github.com/mosip",
+      "rarity": "Epic",
+      "rpgDescription": "\"A global identity aegis, trusted by 30+ nations. Open-source magic backed by the Gates Foundation.\"",
+      "stats": [
+        {
+          "label": "Countries",
+          "value": "30+"
+        },
+        {
+          "label": "Users",
+          "value": "Millions"
+        },
+        {
+          "label": "Features",
+          "value": "12"
+        }
+      ]
+    },
+    {
+      "id": "naralytics",
+      "title": "Naralytics",
+      "tagline": "Emotional Intelligence content platform",
+      "description": "Led a redesign and feature expansion of a human-centered AI content platform; improved engagement metrics (retention + session length) through data-informed UX and real-time media pipelines using Firebase.",
+      "tech": [
+        "React Native",
+        "Firebase",
+        "AI",
+        "Real-time",
+        "Analytics"
+      ],
+      "impact": [
+        "10K+",
+        "Monthly Users"
+      ],
+      "accentColor": "#f97316",
+      "year": "2024",
+      "type": "Mobile App",
+      "url": "#",
+      "rarity": "Rare",
+      "rpgDescription": "\"A mirror of emotional wisdom, reflecting human sentiment through AI. 10K+ seekers arrive monthly for its guidance.\"",
+      "stats": [
+        {
+          "label": "Retention",
+          "value": "+45%"
+        },
+        {
+          "label": "Session",
+          "value": "+2min"
+        },
+        {
+          "label": "MAU",
+          "value": "10K+"
+        }
+      ]
+    },
+    {
+      "id": "babble",
+      "title": "Babble - 3D Language Learning",
+      "tagline": "Gamified VR/3D language practice environment",
+      "description": "Built a gamified environment for language practice with adaptive tasks; achieved strong user feedback from beta testing using Unity and immersive design principles.",
+      "tech": [
+        "Unity",
+        "C#",
+        "3D Design",
+        "Gamification",
+        "AR/VR"
+      ],
+      "impact": [
+        "VR",
+        "Education"
+      ],
+      "accentColor": "#8b5cf6",
+      "year": "2024",
+      "type": "EdTech",
+      "url": "#",
+      "rarity": "Epic",
+      "rpgDescription": "\"A portal to linguistic realms, where words become worlds. 5 languages, 200+ beta adventurers, 4.8★ enchantment rating.\"",
+      "stats": [
+        {
+          "label": "Languages",
+          "value": "5"
+        },
+        {
+          "label": "Beta Users",
+          "value": "200+"
+        },
+        {
+          "label": "Rating",
+          "value": "4.8"
         }
       ]
     }

@@ -13,12 +13,13 @@
       ],
       "readTime": "8 min",
       "author": "Smrita Pandey",
-      "published": true
+      "published": true,
+      "content": "## Introduction\n\nWhen deploying machine learning models in production environments, the challenges extend far beyond model accuracy. In this post, I'll share lessons learned from building and scaling AI systems that serve millions of users.\n\n## Key Considerations\n\n### 1. Infrastructure\n\nThe foundation of any scalable AI system is robust infrastructure. This includes:\n\n- **Model serving**: Using optimized inference servers\n- **Auto-scaling**: Dynamic resource allocation based on demand\n- **Monitoring**: Real-time performance metrics and alerting\n\n### 2. Data Pipeline\n\nA reliable data pipeline is crucial:\n\n```python\ndef process_data(raw_data):\n    # Clean and validate\n    cleaned = validate_schema(raw_data)\n    \n    # Feature engineering\n    features = extract_features(cleaned)\n    \n    return features\n```\n\n### 3. Model Versioning\n\nAlways version your models and maintain rollback capabilities.\n\n## Conclusion\n\nBuilding AI at scale is as much about engineering as it is about data science. The best models are useless without proper infrastructure.\n\n---\n\n*Thanks for reading! Feel free to reach out if you have questions.*"
     },
     {
       "slug": "the-art-of-product-thinking",
       "title": "The Art of Product Thinking",
-      "excerpt": "How I approach building products that users actually love... \nI love to jot down ideas then ...",
+      "excerpt": "How I approach building products that users actually love...",
       "date": "2026-01-10",
       "coverImage": "/img/gallery-2.webp",
       "tags": [
@@ -28,7 +29,8 @@
       ],
       "readTime": "5 min",
       "author": "Smrita Pandey",
-      "published": true
+      "published": true,
+      "content": "## Thinking About Products\n\nProduct thinking is both an art and a science. When building products that serve real users, every decision matters.\n\n## Core Principles\n\n### Start With the User\n\nDon't build what you think is cool — build what your users need. Talk to them, observe them, understand their pain points.\n\n### Design for Failure\n\nEverything fails eventually. Design your products to be resilient and forgiving.\n\n### Measure Everything\n\nWhat you can't measure, you can't improve.\n\n## Common Patterns\n\n- **User research**: Talking to real people before writing code\n- **Rapid prototyping**: Getting something tangible fast\n- **Iterative improvement**: Ship, learn, improve, repeat\n\n## What I've Learned\n\n1. **Simple beats clever** — Users don't care about your architecture\n2. **Speed wins** — Ship fast, iterate faster\n3. **Listen more** — Your users know best\n\n*More on this topic coming soon...*"
     },
     {
       "slug": "from-code-to-ceo",
@@ -42,7 +44,8 @@
       ],
       "readTime": "6 min",
       "author": "Smrita Pandey",
-      "published": true
+      "published": true,
+      "content": "## The Journey\n\nMy path from writing code to building companies wasn't planned. It evolved naturally from solving problems I cared about.\n\n## What Changed\n\nAs a developer, I focused on building great products. As a founder, I had to think about:\n\n- Vision and strategy\n- Team building\n- Business development\n- Customer relationships\n\n## Lessons Learned\n\n1. **Code is just one part** — The best product doesn't always win\n2. **People matter most** — Your team makes or breaks you\n3. **Stay technical** — Don't lose touch with the craft\n\n## What's Next\n\nI'm still learning every day. The journey continues...\n\n---\n\n*Share your own stories with me!*"
     }
   ]
 }

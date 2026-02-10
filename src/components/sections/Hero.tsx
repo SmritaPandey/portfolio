@@ -634,7 +634,19 @@ const Hero = () => {
         .nav-btn:hover {
           border-color: var(--primary);
           color: var(--primary);
-          transform: scale(1.08);
+          transform: scale(1.12);
+          background: rgba(255, 107, 157, 0.08);
+          box-shadow: 0 0 16px rgba(255, 107, 157, 0.15);
+        }
+
+        .nav-btn:hover .nav-icon {
+          transform: rotate(8deg);
+          filter: drop-shadow(0 0 4px rgba(255, 107, 157, 0.5));
+        }
+
+        .nav-icon {
+          display: flex;
+          transition: all 0.3s ease;
         }
 
         .nav-btn--active {
@@ -692,6 +704,17 @@ const Hero = () => {
           opacity: 1;
           visibility: visible;
           transform: translateY(-50%) translateX(0);
+        }
+
+        .nav-label::before {
+          content: '';
+          position: absolute;
+          left: -6px;
+          top: 50%;
+          transform: translateY(-50%);
+          border: 6px solid transparent;
+          border-right-color: rgba(168, 85, 247, 0.3);
+          border-left: 0;
         }
 
         /* ===== STORY PANEL ===== */

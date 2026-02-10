@@ -353,6 +353,7 @@ export type BlogItems = {
   readTime?: Maybe<Scalars['String']['output']>;
   author?: Maybe<Scalars['String']['output']>;
   published?: Maybe<Scalars['Boolean']['output']>;
+  content?: Maybe<Scalars['String']['output']>;
 };
 
 export type Blog = Node & Document & {
@@ -378,6 +379,7 @@ export type BlogItemsFilter = {
   readTime?: InputMaybe<StringFilter>;
   author?: InputMaybe<StringFilter>;
   published?: InputMaybe<BooleanFilter>;
+  content?: InputMaybe<StringFilter>;
 };
 
 export type BlogFilter = {
@@ -397,13 +399,12 @@ export type BlogConnection = Connection & {
   edges?: Maybe<Array<Maybe<BlogConnectionEdges>>>;
 };
 
-export type ProfileSocial = {
-  __typename?: 'ProfileSocial';
-  github?: Maybe<Scalars['String']['output']>;
-  linkedin?: Maybe<Scalars['String']['output']>;
-  twitter?: Maybe<Scalars['String']['output']>;
-  instagram?: Maybe<Scalars['String']['output']>;
-  website?: Maybe<Scalars['String']['output']>;
+export type ProfileSocials = {
+  __typename?: 'ProfileSocials';
+  platform: Scalars['String']['output'];
+  url: Scalars['String']['output'];
+  icon?: Maybe<Scalars['String']['output']>;
+  label?: Maybe<Scalars['String']['output']>;
 };
 
 export type ProfileNavItems = {
@@ -432,12 +433,16 @@ export type ProfileStory = {
 export type Profile = Node & Document & {
   __typename?: 'Profile';
   name: Scalars['String']['output'];
+  firstName?: Maybe<Scalars['String']['output']>;
+  lastName?: Maybe<Scalars['String']['output']>;
   title?: Maybe<Scalars['String']['output']>;
   tagline?: Maybe<Scalars['String']['output']>;
+  bio?: Maybe<Scalars['String']['output']>;
   email?: Maybe<Scalars['String']['output']>;
   location?: Maybe<Scalars['String']['output']>;
   avatar?: Maybe<Scalars['String']['output']>;
-  social?: Maybe<ProfileSocial>;
+  resume?: Maybe<Scalars['String']['output']>;
+  socials?: Maybe<Array<Maybe<ProfileSocials>>>;
   navItems?: Maybe<Array<Maybe<ProfileNavItems>>>;
   story?: Maybe<ProfileStory>;
   id: Scalars['ID']['output'];
@@ -445,12 +450,11 @@ export type Profile = Node & Document & {
   _values: Scalars['JSON']['output'];
 };
 
-export type ProfileSocialFilter = {
-  github?: InputMaybe<StringFilter>;
-  linkedin?: InputMaybe<StringFilter>;
-  twitter?: InputMaybe<StringFilter>;
-  instagram?: InputMaybe<StringFilter>;
-  website?: InputMaybe<StringFilter>;
+export type ProfileSocialsFilter = {
+  platform?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
 };
 
 export type ProfileNavItemsFilter = {
@@ -475,12 +479,16 @@ export type ProfileStoryFilter = {
 
 export type ProfileFilter = {
   name?: InputMaybe<StringFilter>;
+  firstName?: InputMaybe<StringFilter>;
+  lastName?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   tagline?: InputMaybe<StringFilter>;
+  bio?: InputMaybe<StringFilter>;
   email?: InputMaybe<StringFilter>;
   location?: InputMaybe<StringFilter>;
   avatar?: InputMaybe<ImageFilter>;
-  social?: InputMaybe<ProfileSocialFilter>;
+  resume?: InputMaybe<StringFilter>;
+  socials?: InputMaybe<ProfileSocialsFilter>;
   navItems?: InputMaybe<ProfileNavItemsFilter>;
   story?: InputMaybe<ProfileStoryFilter>;
 };
@@ -856,18 +864,18 @@ export type BlogItemsMutation = {
   readTime?: InputMaybe<Scalars['String']['input']>;
   author?: InputMaybe<Scalars['String']['input']>;
   published?: InputMaybe<Scalars['Boolean']['input']>;
+  content?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type BlogMutation = {
   items?: InputMaybe<Array<InputMaybe<BlogItemsMutation>>>;
 };
 
-export type ProfileSocialMutation = {
-  github?: InputMaybe<Scalars['String']['input']>;
-  linkedin?: InputMaybe<Scalars['String']['input']>;
-  twitter?: InputMaybe<Scalars['String']['input']>;
-  instagram?: InputMaybe<Scalars['String']['input']>;
-  website?: InputMaybe<Scalars['String']['input']>;
+export type ProfileSocialsMutation = {
+  platform?: InputMaybe<Scalars['String']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  icon?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ProfileNavItemsMutation = {
@@ -892,12 +900,16 @@ export type ProfileStoryMutation = {
 
 export type ProfileMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
+  firstName?: InputMaybe<Scalars['String']['input']>;
+  lastName?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   tagline?: InputMaybe<Scalars['String']['input']>;
+  bio?: InputMaybe<Scalars['String']['input']>;
   email?: InputMaybe<Scalars['String']['input']>;
   location?: InputMaybe<Scalars['String']['input']>;
   avatar?: InputMaybe<Scalars['String']['input']>;
-  social?: InputMaybe<ProfileSocialMutation>;
+  resume?: InputMaybe<Scalars['String']['input']>;
+  socials?: InputMaybe<Array<InputMaybe<ProfileSocialsMutation>>>;
   navItems?: InputMaybe<Array<InputMaybe<ProfileNavItemsMutation>>>;
   story?: InputMaybe<ProfileStoryMutation>;
 };
@@ -959,9 +971,9 @@ export type TechStackMutation = {
 
 export type ProjectPartsFragment = { __typename: 'Project', items?: Array<{ __typename: 'ProjectItems', id: string, title: string, tagline: string, description: string, tech?: Array<string | null> | null, impact?: Array<string | null> | null, accentColor?: string | null, year?: string | null, type?: string | null, url?: string | null, github?: string | null, screenshot?: string | null, rarity?: string | null, rpgDescription?: string | null, stats?: Array<{ __typename: 'ProjectItemsStats', label?: string | null, value?: string | null } | null> | null } | null> | null };
 
-export type BlogPartsFragment = { __typename: 'Blog', items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null } | null> | null };
+export type BlogPartsFragment = { __typename: 'Blog', items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null, content?: string | null } | null> | null };
 
-export type ProfilePartsFragment = { __typename: 'Profile', name: string, title?: string | null, tagline?: string | null, email?: string | null, location?: string | null, avatar?: string | null, social?: { __typename: 'ProfileSocial', github?: string | null, linkedin?: string | null, twitter?: string | null, instagram?: string | null, website?: string | null } | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null };
+export type ProfilePartsFragment = { __typename: 'Profile', name: string, firstName?: string | null, lastName?: string | null, title?: string | null, tagline?: string | null, bio?: string | null, email?: string | null, location?: string | null, avatar?: string | null, resume?: string | null, socials?: Array<{ __typename: 'ProfileSocials', platform: string, url: string, icon?: string | null, label?: string | null } | null> | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null };
 
 export type SkillsPartsFragment = { __typename: 'Skills', rpgSkills?: Array<{ __typename: 'SkillsRpgSkills', name?: string | null, level?: number | null, maxLevel?: number | null, xp?: number | null, maxXp?: number | null, icon?: string | null, category?: string | null, description?: string | null } | null> | null, softSkills?: Array<{ __typename: 'SkillsSoftSkills', name?: string | null, icon?: string | null, level?: number | null, color?: string | null } | null> | null };
 
@@ -993,7 +1005,7 @@ export type BlogQueryVariables = Exact<{
 }>;
 
 
-export type BlogQuery = { __typename?: 'Query', blog: { __typename: 'Blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null } | null> | null } };
+export type BlogQuery = { __typename?: 'Query', blog: { __typename: 'Blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null, content?: string | null } | null> | null } };
 
 export type BlogConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1005,14 +1017,14 @@ export type BlogConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BlogConnectionQuery = { __typename?: 'Query', blogConnection: { __typename?: 'BlogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BlogConnectionEdges', cursor: string, node?: { __typename: 'Blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null } | null> | null } | null } | null> | null } };
+export type BlogConnectionQuery = { __typename?: 'Query', blogConnection: { __typename?: 'BlogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BlogConnectionEdges', cursor: string, node?: { __typename: 'Blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, items?: Array<{ __typename: 'BlogItems', slug: string, title: string, excerpt?: string | null, date?: string | null, coverImage?: string | null, tags?: Array<string | null> | null, readTime?: string | null, author?: string | null, published?: boolean | null, content?: string | null } | null> | null } | null } | null> | null } };
 
 export type ProfileQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ProfileQuery = { __typename?: 'Query', profile: { __typename: 'Profile', id: string, name: string, title?: string | null, tagline?: string | null, email?: string | null, location?: string | null, avatar?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, social?: { __typename: 'ProfileSocial', github?: string | null, linkedin?: string | null, twitter?: string | null, instagram?: string | null, website?: string | null } | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null } };
+export type ProfileQuery = { __typename?: 'Query', profile: { __typename: 'Profile', id: string, name: string, firstName?: string | null, lastName?: string | null, title?: string | null, tagline?: string | null, bio?: string | null, email?: string | null, location?: string | null, avatar?: string | null, resume?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, socials?: Array<{ __typename: 'ProfileSocials', platform: string, url: string, icon?: string | null, label?: string | null } | null> | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null } };
 
 export type ProfileConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1024,7 +1036,7 @@ export type ProfileConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ProfileConnectionQuery = { __typename?: 'Query', profileConnection: { __typename?: 'ProfileConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProfileConnectionEdges', cursor: string, node?: { __typename: 'Profile', id: string, name: string, title?: string | null, tagline?: string | null, email?: string | null, location?: string | null, avatar?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, social?: { __typename: 'ProfileSocial', github?: string | null, linkedin?: string | null, twitter?: string | null, instagram?: string | null, website?: string | null } | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null } | null } | null> | null } };
+export type ProfileConnectionQuery = { __typename?: 'Query', profileConnection: { __typename?: 'ProfileConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ProfileConnectionEdges', cursor: string, node?: { __typename: 'Profile', id: string, name: string, firstName?: string | null, lastName?: string | null, title?: string | null, tagline?: string | null, bio?: string | null, email?: string | null, location?: string | null, avatar?: string | null, resume?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, socials?: Array<{ __typename: 'ProfileSocials', platform: string, url: string, icon?: string | null, label?: string | null } | null> | null, navItems?: Array<{ __typename: 'ProfileNavItems', id: string, label: string, expandable?: boolean | null, download?: boolean | null, href?: string | null } | null> | null, story?: { __typename: 'ProfileStory', title?: string | null, highlight?: string | null, skills?: Array<string | null> | null, chapters?: Array<{ __typename: 'ProfileStoryChapters', title?: string | null, content?: string | null } | null> | null } | null } | null } | null> | null } };
 
 export type SkillsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1124,6 +1136,7 @@ export const BlogPartsFragmentDoc = gql`
     readTime
     author
     published
+    content
   }
 }
     `;
@@ -1131,18 +1144,21 @@ export const ProfilePartsFragmentDoc = gql`
     fragment ProfileParts on Profile {
   __typename
   name
+  firstName
+  lastName
   title
   tagline
+  bio
   email
   location
   avatar
-  social {
+  resume
+  socials {
     __typename
-    github
-    linkedin
-    twitter
-    instagram
-    website
+    platform
+    url
+    icon
+    label
   }
   navItems {
     __typename

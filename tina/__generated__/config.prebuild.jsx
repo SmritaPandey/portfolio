@@ -102,7 +102,8 @@ var config_default = defineConfig({
               { type: "string", name: "tags", label: "Tags", list: true },
               { type: "string", name: "readTime", label: "Read Time" },
               { type: "string", name: "author", label: "Author" },
-              { type: "boolean", name: "published", label: "Published" }
+              { type: "boolean", name: "published", label: "Published" },
+              { type: "string", name: "content", label: "Content (Markdown)", ui: { component: "textarea" } }
             ]
           }
         ]
@@ -123,22 +124,31 @@ var config_default = defineConfig({
           }
         },
         fields: [
-          { type: "string", name: "name", label: "Name", required: true },
+          { type: "string", name: "name", label: "Full Name", required: true },
+          { type: "string", name: "firstName", label: "First Name" },
+          { type: "string", name: "lastName", label: "Last Name" },
           { type: "string", name: "title", label: "Title" },
           { type: "string", name: "tagline", label: "Tagline" },
+          { type: "string", name: "bio", label: "Bio", ui: { component: "textarea" } },
           { type: "string", name: "email", label: "Email" },
           { type: "string", name: "location", label: "Location" },
           { type: "image", name: "avatar", label: "Avatar" },
+          { type: "string", name: "resume", label: "Resume URL" },
           {
             type: "object",
-            name: "social",
+            name: "socials",
             label: "Social Links",
+            list: true,
+            ui: {
+              itemProps: (item) => ({
+                label: item?.platform || "New Social"
+              })
+            },
             fields: [
-              { type: "string", name: "github", label: "GitHub" },
-              { type: "string", name: "linkedin", label: "LinkedIn" },
-              { type: "string", name: "twitter", label: "Twitter" },
-              { type: "string", name: "instagram", label: "Instagram" },
-              { type: "string", name: "website", label: "Website" }
+              { type: "string", name: "platform", label: "Platform", required: true },
+              { type: "string", name: "url", label: "URL", required: true },
+              { type: "string", name: "icon", label: "Icon Name" },
+              { type: "string", name: "label", label: "Label" }
             ]
           },
           {

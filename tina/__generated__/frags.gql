@@ -37,24 +37,28 @@ fragment BlogParts on Blog {
     readTime
     author
     published
+    content
   }
 }
 
 fragment ProfileParts on Profile {
   __typename
   name
+  firstName
+  lastName
   title
   tagline
+  bio
   email
   location
   avatar
-  social {
+  resume
+  socials {
     __typename
-    github
-    linkedin
-    twitter
-    instagram
-    website
+    platform
+    url
+    icon
+    label
   }
   navItems {
     __typename
