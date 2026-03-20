@@ -76,6 +76,7 @@ const BlogPostPage = () => {
                         .replace(/\*(.*?)\*/g, '<em>$1</em>')
                         .replace(/`{3}(\w+)?\n([\s\S]*?)`{3}/g, '<pre><code class="language-$1">$2</code></pre>')
                         .replace(/`(.*?)`/g, '<code>$1</code>')
+                        .replace(/!\[(.*?)\]\((.*?)\)/g, '<figure class="blog-post__image"><img src="$2" alt="$1" loading="lazy" /><figcaption>$1</figcaption></figure>')
                         .replace(/^- (.*$)/gm, '<li>$1</li>')
                         .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
                         .replace(/^(\d+)\. (.*$)/gm, '<li>$2</li>')
@@ -89,6 +90,8 @@ const BlogPostPage = () => {
                         .replace(/<p><pre>/g, '<pre>')
                         .replace(/<\/pre><\/p>/g, '</pre>')
                         .replace(/<p><hr><\/p>/g, '<hr>')
+                        .replace(/<p><figure/g, '<figure')
+                        .replace(/<\/figure><\/p>/g, '</figure>')
                         .replace(/<p><\/p>/g, '')
                 }} />
 
@@ -308,6 +311,29 @@ const BlogPostPage = () => {
                 .blog-post__content em {
                     font-style: italic;
                     color: #8B7A8D;
+                }
+
+                .blog-post__image {
+                    margin: 2rem -0.5rem;
+                    text-align: center;
+                }
+
+                .blog-post__image img {
+                    max-width: 100%;
+                    border-radius: 16px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    border: 1px solid rgba(255, 183, 213, 0.15);
+                }
+
+                .blog-post__image figcaption {
+                    font-size: 0.85rem;
+                    color: #8B7A8D;
+                    margin-top: 0.75rem;
+                    font-style: italic;
+                }
+
+                .blog-post__image figcaption:empty {
+                    display: none;
                 }
 
                 /* Bottom Navigation */
