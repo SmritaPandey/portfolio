@@ -70,7 +70,11 @@
       "excerpt": "Working memory, attention, and cognitive bias are silently shaping your success.",
       "date": "2026-03-18",
       "coverImage": "/img/gallery-3.webp",
-      "tags": ["Psychology", "Productivity", "Self-Improvement"],
+      "tags": [
+        "Psychology",
+        "Productivity",
+        "Self-Improvement"
+      ],
       "readTime": "9 min",
       "author": "Smrita Pandey",
       "published": true,
@@ -82,7 +86,11 @@
       "excerpt": "A quiet reflection on overthinking, learning, and figuring out how to work with your own mind instead of against it.",
       "date": "2026-03-16",
       "coverImage": "/img/cosmic-sailor.jpg",
-      "tags": ["Personal", "Mindfulness", "Growth"],
+      "tags": [
+        "Personal",
+        "Mindfulness",
+        "Growth"
+      ],
       "readTime": "7 min",
       "author": "Smrita Pandey",
       "published": true,
@@ -94,7 +102,11 @@
       "excerpt": "The best projects I've worked on were never assigned to me. They started with a question I couldn't stop thinking about.",
       "date": "2026-03-14",
       "coverImage": "/img/blog/build-things.png",
-      "tags": ["Engineering", "Personal", "Creativity"],
+      "tags": [
+        "Engineering",
+        "Personal",
+        "Creativity"
+      ],
       "readTime": "6 min",
       "author": "Smrita Pandey",
       "published": true,
@@ -106,7 +118,11 @@
       "excerpt": "I've watched hundreds of tutorials and still felt like I couldn't build anything on my own. Understanding why changed everything.",
       "date": "2026-03-10",
       "coverImage": "/img/blog/learning-doing.png",
-      "tags": ["Learning", "Engineering", "Cognitive Science"],
+      "tags": [
+        "Learning",
+        "Engineering",
+        "Cognitive Science"
+      ],
       "readTime": "6 min",
       "author": "Smrita Pandey",
       "published": true,
@@ -118,7 +134,11 @@
       "excerpt": "From A Silent Voice to Naruto, anime has shaped how I think about perseverance, empathy, and building things that matter.",
       "date": "2026-03-06",
       "coverImage": "/img/blog/anime-resilience.png",
-      "tags": ["Personal", "Anime", "Psychology"],
+      "tags": [
+        "Personal",
+        "Anime",
+        "Psychology"
+      ],
       "readTime": "7 min",
       "author": "Smrita Pandey",
       "published": true,
@@ -130,11 +150,31 @@
       "excerpt": "Most users don't notice good design. They only notice bad design. Understanding attention and working memory changed how I build interfaces.",
       "date": "2026-03-02",
       "coverImage": "/img/blog/distracted-design.png",
-      "tags": ["Design", "Cognitive Science", "UX"],
+      "tags": [
+        "Design",
+        "Cognitive Science",
+        "UX"
+      ],
       "readTime": "6 min",
       "author": "Smrita Pandey",
       "published": true,
       "content": "## A truth most designers don't want to hear\n\nYour users don't care about your design. They care about getting things done. They don't want your clever animations. They want to find the button.\n\nThis sounds harsh, but it's grounded in everything I've learned about attention and cognitive load.\n\n---\n\n## What cognitive psychology tells us about users\n\nOne of the key topics that has had a significant impact on my understanding of design is Working Memory. Working memory is the cognitive system responsible for temporarily holding and manipulating information necessary for complex cognitive tasks. Understanding the limitations of working memory has helped me appreciate the importance of effective organization — not just in daily tasks, but in interface design.\n\nAs a college student, I often juggle multiple assignments, deadlines, and responsibilities. I now recognize the significance of breaking down complex information into smaller, manageable chunks. By doing so, I reduce the cognitive load on working memory, which allows users to approach tasks with more focus and clarity. This simple realization has implications far beyond academics — it fundamentally changes how I design software.\n\nThe concept of working memory has practical implications for cybersecurity too. In this field, it is crucial to manage and process a vast amount of information in real-time to detect and respond to security threats effectively. The design of user interfaces and security dashboards that take into account the limitations of working memory can greatly enhance the performance of cybersecurity professionals.\n\n---\n\n## Attention and consciousness in design\n\nAnother topic I found particularly relevant is Attention and Consciousness. This delves into the mechanisms of attention, selective focus, and conscious awareness. Learning about the different types of attention and strategies to enhance focus has been transformative for how I build interfaces.\n\nI now employ techniques informed by attention research when designing:\n\n- **Selective attention**: Users will focus on what seems most relevant to their goal. Make the primary action obvious.\n- **Divided attention**: People are terrible at processing multiple information streams simultaneously. Don't put competing calls-to-action on the same screen.\n- **Sustained attention**: Users get fatigued. Long forms, dense dashboards, and information-heavy pages lead to errors.\n\nIn my future career in cybersecurity, the concept of attention has direct implications for threat detection and incident response. Cybersecurity professionals need to maintain intense focus and vigilance to identify and respond to potential threats. Understanding how attention can be directed, sustained, and switched between tasks helps in building effective security monitoring systems.\n\n---\n\n## Cognitive biases in design\n\nOne common cognitive bias is the **anchoring bias**, where people tend to rely too heavily on the first piece of information they encounter when making decisions. In an ethical hacking competition, I utilized this concept by creating false clues that served as anchors for the defenders. The same principle applies to design — the first thing a user sees on your interface sets their expectation for everything else.\n\n---\n\n## A lesson from building products\n\nWhen I built the GRC platform, I spent weeks perfecting the interface. Gradients. Glassmorphism. Smooth transitions. It looked beautiful.\n\nThen someone asked: \"Where's the export button?\"\n\nThat moment taught me something critical: **aesthetics and usability are not the same thing.** The cognitive load I was adding with visual complexity was actually making the tool harder to use.\n\n---\n\n## The balance\n\nI still love making things beautiful. The kawaii theme on this very blog is evidence of that. But beauty should serve usability, not compete with it.\n\nThe two questions I ask first:\n\n1. Can the user find what they need in 3 seconds?\n2. Does the design get out of the way?\n\nIf the answer to either is no, the design has failed — no matter how good it looks.\n\n---\n\n## Final thought\n\nDesign for the person who's tired, distracted, and in a hurry. Because that's what your brain is most of the time — overloaded, fatigued, and running on limited attentional resources. By incorporating principles from cognitive science, we can build interfaces that work *with* the human brain rather than against it."
+    },
+    {
+      "slug": "faraway-memories",
+      "title": "Faraway Memories",
+      "excerpt": "A girl wakes up in complete darkness with no memory of who she is. A golden void, holographic screens, and a mysterious meadow await her. Chapter 1 & 2 of an original story.",
+      "date": "2026-03-21",
+      "coverImage": "/img/blog/faraway-memories.png",
+      "tags": [
+        "Fiction",
+        "Creative Writing",
+        "Story"
+      ],
+      "readTime": "10 min",
+      "author": "Smrita Pandey",
+      "published": true,
+      "content": "# CHAPTER 1\n\nBeep\n\nBeep\n\nBeep–\n\nIn complete darkness, an eerie voice echoed through the void and a girl was lying motionless in that emptiness. Is she dead? Is this the afterlife? The void that awaits us beyond the end of our lives?\n\nHer eyes stirred for a moment, and she jolted awake with clenched fists and a panting breath. She strained her eyes to see something, anything… yet was unable to perceive anything with either of her five senses. There was complete silence, no up or down, no ground beneath her feet, yet she could see herself faintly. She was standing yet there was no ground, as if floating in outer space.\n\n“What is this place? Where am I?”\n\nShe slowly regained her cognition, looking all over herself, trying to make sense of this situation to no avail.\n\n“I feel… I am… I am forgetting something important… Ugh–”\n\n*M-my head hurts.*\n\nAs soon as that thought passed her mind, she belatedly discovered that she didn't know who she was. She had no recollection of her life yet a deep pain pierced her heart as if she had lost something precious to her, more than her life. Tears streamed down her face from the pain in her chest and she slowly tried stepping forward.\n\nAt the moment her toe tried to make a step in the nothingness, rings of golden light rippled at once and gradually lit up the area around her. The reverberating light, as if ripples in a pond made by a drop of water spread as far as she could see and the whole space lit up with a bright golden glow. She had to squint her eyes as she was blinded by the sudden brightness for her pupils to adjust to the transformation.\n\nShe slowly advanced a few more steps, hesitance evident in each step. She could now clearly feel the ground and see what was in front of her. Dozens of holographic screens were floating all around her. On closer inspection, she could see that all the screens were blurry except for one which was right in front of her. She approached that screen in a daze, as if it was calling out to her and, before she realized it, she was reaching out her hand as if her body was moving on its own.\n\n“What is happening? My… M-my hand is passing through the screen?!”\n\nShe was surprised out of her daze by the sudden pull but before she could think any further, she was already sucked into the hologram. She shut her eyes tightly as she was pulled by an unknown force and found herself inside the screen. She jarred her eyes wide to see that she was now in a completely different location that looked exactly the same as the scenery portrayed in the holograph she was swallowed by.\n\nShe found herself under a tree on a small hill that overlooked a beautiful lush green meadow. The tree had a swing hanging from its lowest branch and a gentle breeze flowing through the land pushed the swing, giving it a slight momentum to harmonically sway with the wind.\n\nThe scene was so mesmerizing that she lost all strength in her knees and slid to the ground. With a dumbfounded look in her wide eyes, she looked up to the sky and saw a dandelion floating towards her. She reached out her hand and the dandelion lightly perched on her wrist. A smile broke out on her dumbstruck face and she felt a rush of nostalgia as if this was a familiar, everyday sight. She delicately picked up the bloom and put it atop her palm before blowing it away with her breath. The dandelion picked up the wind again and flew past her this time as she looked over her shoulder and followed its motion with her eyes. Her eyes then landed on a distant hut behind her and she felt compelled to rush to that place.\n\nHowever, she suppressed her urge and sat down in a more comfortable position before inhaling and exhaling a few times, breathing deeply with a sigh.\n\n“Calm down. Phew–”\n\nShe tried to organize her thoughts to try and understand what was happening.\n\n“Let me see… I don't remember my name and who I was before waking up in the darkness. I don't remember anything. Nothing makes sense. I was in a completely white room that stretched infinitely on all sides and there were blurry screens. Did I perhaps… die? Is this another world? But… why does it seem so familiar?”\n\n*Wait wait wait wai–*\n\nHer heart suddenly started beating wildly and her lips parted as she panted as if asphyxiated. She lost her balance and fell unconscious on the grass under the tree's shade.\n\n---\n\n# CHAPTER 2\n\nYet again, she woke up, adjusting her eyes to her surroundings. This time too, she found herself in an unfamiliar room. She sat up on the bed she was lying in and looked out the window beside the small bed. The landscape she had witnessed before fainting was still as tranquil as she remembered. Perhaps, she was inside the hut she had glanced at earlier.\n\n“Ah… you woke up already? Here, young lady”\n\nAn old man, maybe around her grandfather's age, walked in. He had a tray in his hand that had a glass of water. He offered it to her, a slight smile on his wrinkled face. Her brain wanted to hesitate but her parched body moved on its own, similar to how it has been acting since she woke up in this strange place. While gulping it down, she kept thinking that her body was acting quite strange, as if it was being moved by someone else's will. She had no memories yet everything felt strangely familiar.\n\nShe cleared her throat and kept the glass on the side table. She had so many questions and her train of thought was running wild with anxiety. She decided to inquire the old man.\n\n“Hello sir, who are you?”\n\n“I am the owner of this hut.”\n\n*Yeah, that answers nothing.*\n\n“Sir, where is this place?”\n\n“That is a question you'll have to find the answer to, yourself.”\n\nHis roundabout answers started to irritate the girl but she suppressed her annoyance. She chose her next words carefully.\n\n“How did I end up here?”\n\n“You were sleeping under that tree on the hill, Ygg saw you and brought you here.” He said, pointing to the tree visible from the window.\n\n“Ygg? And uh… I was not sleeping there… uh… I meant to ask how did I come to this place?”\n\n“Ygg carried you from that place to the bed.”\n\n*Who even is Ygg? Can this person not not make sense?*\n\nFrustrated by his simple words and nonchalant tone, she decided to try asking one last time.\n\n“No, I mean thank you for carrying me all the way but, how did I come to this meadow?”\n\n“How would I know that?”\n\n*Okay, that's it. I better stop expecting proper answers.*\n\n“I see…………”\n\nFrom the corner of my eye, a glimpse of black blur flittered past the door and a little fur ball was now tugging onto the old man's leg.\n\n“Oh ygg is here to say hello”\n\n*That is Ygg?! The one who carried me here? How is that possible?!*\n\n---\n\n## *To be continued...*"
     }
   ]
 }
