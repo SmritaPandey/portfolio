@@ -18,10 +18,10 @@ import { blogPosts } from '../content';
 const BlogPage = () => {
     const [filter, setFilter] = useState<string>('all');
 
-    const allTags = [...new Set(blogPosts.flatMap(post => post.tags))];
+    const allTags = [...new Set(blogPosts.flatMap(post => post.tags || []))];
     const filteredPosts = filter === 'all'
         ? blogPosts
-        : blogPosts.filter(post => post.tags.includes(filter));
+        : blogPosts.filter(post => (post.tags || []).includes(filter));
 
 
     useEffect(() => {
@@ -91,7 +91,7 @@ const BlogPage = () => {
                         <Link to={`/blog/${post.slug}`} key={post.slug} className="blog-card clay-card">
                             <div className="blog-card__shimmer" />
                             <div className="blog-card__image">
-                                <img src={post.coverImage} alt={post.title} />
+                                <img src={post.coverImage || '/img/gallery-1.webp'} alt={post.title || 'Blog post'} />
                                 <div className="blog-card__overlay" />
                                 <div className="blog-card__sparkle">
                                     <Sparkle weight="fill" size={16} />
@@ -99,16 +99,16 @@ const BlogPage = () => {
                             </div>
                             <div className="blog-card__content">
                                 <div className="blog-card__tags">
-                                    {post.tags.map(tag => (
+                                    {(post.tags || []).map(tag => (
                                         <span key={tag} className="blog-card__tag">{tag}</span>
                                     ))}
                                 </div>
                                 <h2 className="blog-card__title">{post.title}</h2>
-                                <p className="blog-card__excerpt">{post.excerpt}</p>
+                                <p className="blog-card__excerpt">{post.excerpt || ''}</p>
                                 <div className="blog-card__meta">
-                                    <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                                    <span>{post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recent'}</span>
                                     <span>·</span>
-                                    <span>{post.readTime} read</span>
+                                    <span>{post.readTime || '5 min'} read</span>
                                 </div>
                             </div>
                         </Link>

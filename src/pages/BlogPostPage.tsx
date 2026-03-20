@@ -49,20 +49,20 @@ const BlogPostPage = () => {
                 <div className="blog-post__meta">
                     <Link to="/blog" className="blog-post__back"><ArrowLeft weight="bold" size={14} style={{ marginRight: 6, verticalAlign: 'middle' }} />Back to blog</Link>
                     <div className="blog-post__info">
-                        <span>{new Date(post.date).toLocaleDateString('en-US', {
+                        <span>{post.date ? new Date(post.date).toLocaleDateString('en-US', {
                             month: 'long',
                             day: 'numeric',
                             year: 'numeric'
-                        })}</span>
+                        }) : 'Recent'}</span>
                         <span>·</span>
-                        <span>{post.readTime} read</span>
+                        <span>{post.readTime || '5 min'} read</span>
                     </div>
                 </div>
 
                 <h1 className="blog-post__title">{post.title}</h1>
 
                 <div className="blog-post__tags">
-                    {post.tags.map(tag => (
+                    {(post.tags || []).map(tag => (
                         <span key={tag} className="blog-post__tag">{tag}</span>
                     ))}
                 </div>
